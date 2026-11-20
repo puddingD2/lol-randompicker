@@ -12,9 +12,16 @@ st.title("lolランダムピック")
 st.text("ボタンを押すとランダムにキャラが選ばれます")
 
 if st.button("ロールごちゃまぜ"):
-    st.write(random.choice(all),random.choice(all),random.choice(all),random.choice(all),random.choice(all))
+    for i in range(5):
+        x = random.choice(all)
+        st.write(x)
+        all.remove(x)
 if st.button("ロール固定"):
-    st.write("top:",random.choice(top),"jg:",random.choice(jg),"mid:",random.choice(mid),"adc:",random.choice(adc),"sup:",random.choice(sup))
+    st.write("top:",random.choice(top))
+    st.write("jg:",random.choice(jg))
+    st.write("mid:",random.choice(mid))
+    st.write("adc:",random.choice(adc))
+    st.write("sup:",random.choice(sup))
 if st.button("topのみ"):
     st.write(random.choice(top))
 if st.button("jgのみ"):
